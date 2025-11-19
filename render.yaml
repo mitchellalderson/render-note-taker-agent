@@ -6,7 +6,7 @@ services:
     rootDir: ./backend
     buildCommand: |
       pip install uv
-      uv pip install --system -r pyproject.toml
+      uv pip install --system .
     startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 4 --timeout 120 app:app
     envVars:
       - key: PYTHON_VERSION
