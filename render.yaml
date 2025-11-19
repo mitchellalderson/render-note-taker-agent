@@ -29,9 +29,6 @@ services:
       - key: NODE_VERSION
         value: 20.x
       - key: NEXT_PUBLIC_API_URL
-        fromService:
-          type: web
-          name: note-taker-backend
-          property: url
+        sync: false
     autoDeploy: true
 

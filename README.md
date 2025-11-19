@@ -57,7 +57,14 @@ This project is pre-configured for one-click deployment to [Render](https://rend
      - Build and deploy Next.js frontend
      - Link services together
 
-5. **Access your deployed app:**
+5. **Configure the Frontend API URL:**
+   - After deployment, copy your backend URL (e.g., `https://note-taker-backend.onrender.com`)
+   - Go to your frontend service in the Render Dashboard
+   - Navigate to "Environment" tab
+   - Set `NEXT_PUBLIC_API_URL` to your backend URL
+   - The frontend will automatically redeploy with the correct API endpoint
+
+6. **Access your deployed app:**
    - Frontend: `https://your-app-name-frontend.onrender.com`
    - Backend API: `https://your-app-name-backend.onrender.com`
 
