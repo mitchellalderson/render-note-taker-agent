@@ -4,9 +4,7 @@ services:
     name: note-taker-backend
     runtime: python
     rootDir: ./backend
-    buildCommand: |
-      pip install uv
-      uv pip install --system .
+    buildCommand: pip install -r requirements.txt
     startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 4 --timeout 120 app:app
     envVars:
       - key: PYTHON_VERSION
