@@ -9,7 +9,7 @@ services:
     startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 4 --timeout 120 app:app
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11
+        value: 3.11.14
       - key: ASSEMBLYAI_API_KEY
         sync: false
       - key: OPENAI_API_KEY

@@ -232,7 +232,6 @@ See the main [README.md](./README.md) for deployment options:
 - **Backend API**: See `backend/README.md`
 - **Frontend Details**: See `frontend/README.md`
 - **Main Documentation**: See [README.md](./README.md)
-- **Project Plan**: See [PLAN.md](./PLAN.md)
 
 ## Common Questions
 

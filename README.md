@@ -214,7 +214,6 @@ docker compose logs backend
 ## 📚 Additional Documentation
 
 - **[QUICKSTART.md](./QUICKSTART.md)** - 🚀 Get started in 5 minutes with Docker Compose
-- **[PLAN.md](./PLAN.md)** - Project plan and development details
 - `backend/README.md` - Backend API documentation
 - `frontend/README.md` - Frontend component documentation
 
