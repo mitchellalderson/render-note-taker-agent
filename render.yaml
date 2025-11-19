@@ -3,7 +3,7 @@ services:
   - type: web
     name: note-taker-backend
     runtime: python
-    root: ./backend
+    rootDir: ./backend
     buildCommand: |
       pip install uv
       uv pip install --system -r pyproject.toml
@@ -24,7 +24,7 @@ services:
   - type: web
     name: note-taker-frontend
     runtime: node
-    root: ./frontend
+    rootDir: ./frontend
     buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:
