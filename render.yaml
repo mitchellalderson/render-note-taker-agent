@@ -1,0 +1,37 @@
+services:
+  # Backend Flask API
+  - type: web
+    name: note-taker-backend
+    runtime: python
+    buildCommand: |
+      pip install uv
+      uv pip install --system -r pyproject.toml
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 4 --timeout 120 app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
+      - key: ASSEMBLYAI_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+    healthCheckPath: /health
+    autoDeploy: true
+
+  # Frontend Next.js Application
+  - type: web
+    name: note-taker-frontend
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.x
+      - key: NEXT_PUBLIC_API_URL
+        fromService:
+          type: web
+          name: note-taker-backend
+          property: url
+    autoDeploy: true
+
