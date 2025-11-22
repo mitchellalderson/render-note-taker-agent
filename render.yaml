@@ -2,37 +2,37 @@ projects:
   - name: render-note-taker-agent-example
     environments:
       - name: production
-    services:
-      # Backend Flask API
-      - type: web
-        name: note-taker-backend
-        runtime: python
-        rootDir: ./backend
-        buildCommand: pip install -r requirements.txt
-        startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 4 --timeout 120 app:app
-        envVars:
-          - key: PYTHON_VERSION
-            value: 3.11.14
-          - key: ASSEMBLYAI_API_KEY
-            sync: false
-          - key: OPENAI_API_KEY
-            sync: false
-          - key: OPENAI_MODEL
-            value: gpt-4o-mini
-        healthCheckPath: /health
-        autoDeploy: true
+        services:
+          # Backend Flask API
+          - type: web
+            name: note-taker-backend
+            runtime: python
+            rootDir: ./backend
+            buildCommand: pip install -r requirements.txt
+            startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 4 --timeout 120 app:app
+            envVars:
+              - key: PYTHON_VERSION
+                value: 3.11.14
+              - key: ASSEMBLYAI_API_KEY
+                sync: false
+              - key: OPENAI_API_KEY
+                sync: false
+              - key: OPENAI_MODEL
+                value: gpt-4o-mini
+            healthCheckPath: /health
+            autoDeploy: true
 
-      # Frontend Next.js Application
-      - type: web
-        name: note-taker-frontend
-        runtime: node
-        rootDir: ./frontend
-        buildCommand: npm install && npm run build
-        startCommand: npm start
-        envVars:
-          - key: NODE_VERSION
-            value: 20.x
-          - key: NEXT_PUBLIC_API_URL
-            sync: false
-        autoDeploy: true
+          # Frontend Next.js Application
+          - type: web
+            name: note-taker-frontend
+            runtime: node
+            rootDir: ./frontend
+            buildCommand: npm install && npm run build
+            startCommand: npm start
+            envVars:
+              - key: NODE_VERSION
+                value: 20.x
+              - key: NEXT_PUBLIC_API_URL
+                sync: false
+            autoDeploy: true
 
