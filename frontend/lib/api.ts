@@ -1,4 +1,17 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3100';
+function getApiBaseUrl(): string {
+  const apiHost = process.env.NEXT_PUBLIC_API_HOST;
+  if (apiHost) {
+    // If it's just a service name (no dots), append .onrender.com
+    const fullHost = apiHost.includes(".")
+      ? apiHost
+      : `${apiHost}.onrender.com`;
+    return `https://${fullHost}`;
+  }
+  // Fall back to full URL (for local development)
+  return process.env.NEXT_PUBLIC_API_URL || "http://localhost:3100";
+}
+
+const API_BASE_URL = getApiBaseUrl();
 
 export interface TranscriptionResponse {
   id: string;

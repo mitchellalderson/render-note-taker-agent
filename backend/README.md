@@ -73,6 +73,25 @@ backend/
 - **Flask 3.0** - Web framework
 - **uv** - Fast Python package manager
 - **AssemblyAI** - Speech-to-text
-- **OpenAI** - AI summarization
+- **OpenAI** - AI summarization with intelligent chunking
 - **Gunicorn** - Production WSGI server
+
+## Key Features
+
+### Intelligent Text Chunking
+
+The OpenAI service includes automatic chunking for long transcriptions:
+
+- **Automatic detection** - Estimates token count and chunks only when needed
+- **Smart splitting** - Splits on paragraph/sentence boundaries to preserve context
+- **Map-reduce approach** - Summarizes chunks independently, then combines results
+- **No context overflow** - Handles recordings of any length (5 minutes to 8+ hours)
+
+**How it works:**
+1. Transcription > 12k tokens? Split into chunks
+2. Each chunk summarized with context awareness  
+3. Chunk summaries combined into cohesive final summary
+4. Short transcriptions processed normally (single pass)
+
+See `services/openai_service.py` for implementation details or `ARCHITECTURE.md` for full documentation.
 

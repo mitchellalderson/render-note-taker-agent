@@ -55,18 +55,12 @@ This project is pre-configured for one-click deployment to [Render](https://rend
    - Render will:
      - Build and deploy Flask backend
      - Build and deploy Next.js frontend
-     - Link services together
+     - Automatically link services together (frontend will auto-connect to backend!)
 
-5. **Configure the Frontend API URL:**
-   - After deployment, copy your backend URL (e.g., `https://note-taker-backend.onrender.com`)
-   - Go to your frontend service in the Render Dashboard
-   - Navigate to "Environment" tab
-   - Set `NEXT_PUBLIC_API_URL` to your backend URL
-   - The frontend will automatically redeploy with the correct API endpoint
-
-6. **Access your deployed app:**
+5. **Access your deployed app:**
    - Frontend: `https://your-app-name-frontend.onrender.com`
    - Backend API: `https://your-app-name-backend.onrender.com`
+   - **That's it!** The app works immediately - no manual configuration needed! 🎉
 
 **Cost Estimate (Render Free Tier):**
 - 2 Web Services (frontend + backend): Free
@@ -79,7 +73,8 @@ This project is pre-configured for one-click deployment to [Render](https://rend
 - 🎤 **Browser-based audio recording** - Record directly in your browser, no downloads needed
 - ⚡ **Lightning-fast transcription** - Powered by AssemblyAI for accurate speech-to-text
 - 🤖 **AI-powered summaries** - Get key insights, important points, and action items with OpenAI
-- 🎨 **Beautiful UI** - Inspired by Render.com's clean, modern design
+- 📊 **Intelligent chunking** - Handles transcriptions of any length with automatic text chunking (no context overflow!)
+- 🎨 **Beautiful UI** - Inspired by Render.com's clean, modern design with markdown support
 - 🐳 **Docker-ready** - Easy deployment with Docker Compose
 - ☁️ **Render-optimized** - Deploy to production with a single blueprint file
 
@@ -214,6 +209,7 @@ docker compose logs backend
 ## 📚 Additional Documentation
 
 - **[QUICKSTART.md](./QUICKSTART.md)** - 🚀 Get started in 5 minutes with Docker Compose
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)** - 🏗️ System architecture and design decisions
 - `backend/README.md` - Backend API documentation
 - `frontend/README.md` - Frontend component documentation
 

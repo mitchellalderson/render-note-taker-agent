@@ -35,7 +35,7 @@ export default function RootLayout({
                   Note Taker <span className="text-primary">AI</span>
                 </h1>
                 <p className="text-sm text-muted-foreground hidden sm:block">
-                  Powered by AssemblyAI & OpenAI
+                  built with AssemblyAI & OpenAI | powered by Render.com
                 </p>
               </div>
             </div>
@@ -45,7 +45,7 @@ export default function RootLayout({
           </main>
           <footer className="border-t mt-16">
             <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
-              <p>Built with Next.js, Flask, AssemblyAI & OpenAI | powered by <strong><a href="https://render.com" target="_blank" rel="noopener noreferrer">Render</a></strong></p>
+              <p>built with AssemblyAI & OpenAI | powered by <a href="https://render.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">Render.com</a></p>
             </div>
           </footer>
         </div>

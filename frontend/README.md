@@ -12,13 +12,15 @@ npm install
 
 ### Configure Environment
 
-Create a `.env.local` file:
+**For local development**, no configuration needed! The app automatically uses `http://localhost:3100`.
+
+**For production on Render**, the backend URL is automatically configured via `NEXT_PUBLIC_API_HOST`.
+
+**To override** (optional), create a `.env.local` file:
 
 ```bash
 echo "NEXT_PUBLIC_API_URL=http://localhost:3100" > .env.local
 ```
-
-For production, set `NEXT_PUBLIC_API_URL` to your backend URL.
 
 ### Development
 

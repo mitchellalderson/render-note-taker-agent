@@ -120,4 +120,64 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Prose styling for markdown content */
+  .prose {
+    color: var(--color-foreground);
+  }
+  
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    color: var(--color-foreground);
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  .prose h1 { font-size: 1.5em; }
+  .prose h2 { font-size: 1.25em; }
+  .prose h3 { font-size: 1.1em; }
+  
+  .prose strong {
+    color: var(--color-foreground);
+    font-weight: 600;
+  }
+  
+  .prose ul,
+  .prose ol {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+    padding-left: 1.5em;
+  }
+  
+  .prose li {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+  }
+  
+  .prose p {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+  }
+  
+  .prose a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+  
+  .prose code {
+    background-color: var(--color-muted);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+  }
+  
+  .prose pre {
+    background-color: var(--color-muted);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+  }
 }

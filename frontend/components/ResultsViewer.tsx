@@ -7,6 +7,8 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { FileText, Sparkles, AlertCircle, Copy, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface ResultsViewerProps {
   transcription?: string;
@@ -155,10 +157,10 @@ export function ResultsViewer({
               <Skeleton className="h-4 w-2/3" />
             </div>
           ) : summary ? (
-            <div className="prose prose-sm max-w-none">
-              <p className="whitespace-pre-wrap text-foreground leading-relaxed">
+            <div className="prose prose-sm max-w-none dark:prose-invert">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {summary}
-              </p>
+              </ReactMarkdown>
             </div>
           ) : (
             <p className="text-muted-foreground text-sm">
